@@ -1,10 +1,89 @@
-body,html{
-    padding: 0;
-    margin: 0;
+:root{
+    --background-color: #F3F5FC;
+    --background-aside:  #FFFFFF;
+    --textarea-color: #0A3871;
+    --fuentetext-area: 'Inter',sans-serif;
 }
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 body{
-
+    background-color: var(--background-color);
+    display: flex;
+    box-sizing: border-box; 
+    width: 100%;
+    flex-direction: row;
+    overflow-x: hidden;
+    font-family: var(--fuentetext-area);
+}
+.logo{
+    display: block;
+    height: 48px;
+}
+.con{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
 }
 .main{
     display: flex;
+    flex-direction: row;
+    min-width: 70%;
+    margin-top: 30px;
+    box-sizing: border-box;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+.container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+.inputtext{
+    min-width:80%;
+}
+
+.intext{
+
+        font-family: var(--fuentetext-area);
+        width: 80%; /* Ajustar al ancho deseado del textarea */
+        height: 80vh; /* Altura del textarea */
+        padding: 10px; /* Añadir espaciado interno */
+        border: none;
+        border-radius: 5px; /* Borde redondeado */
+        font-size: 32px; /* Tamaño de fuente */
+        text-align: left; /* Alinear el texto al principio */
+        box-sizing: border-box; /* Incluir el padding y border en el tamaño total */
+        resize: none;
+        background-color: transparent;
+        color: var(--textarea-color) ;
+        padding-top: 70px;
+        line-height: 48px;
+        font-weight: 400;
+    
+}
+.intext::placeholder{
+    color: var(--textarea-color);
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: 90vh;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--background-aside);
+    border-radius: 10px;
+    margin: auto;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    margin-right: 100px;
+    text-align: center;
+}
+.subtitle{
+    font-weight: 700;
+    font-size: 1.5rem;
+    line-height: 28.8px;
 }
