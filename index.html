@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Challenge encriptador</title>
     <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css">
 </head>
 <body>
     <div class="logo"><img src="./assets/Logo.png" alt=""></div>
@@ -12,11 +13,16 @@
     <main class="main">
         <div class="container">
             <div class="inputtext">
-                <textarea class="intext" placeholder="Ingresa el texto aquí"></textarea>
+                <textarea class="intext" placeholder="Ingresa el texto aquí" id="textarea"></textarea>
             </div>
             <div class="buttons">
-                <a href="" class="link"><button class="button">Encriptar</button></a>
-                <a href="" class="link"><button class="button">Desencriptar</button></a>
+                <div class="textbottons">
+                    <i class="bi bi-exclamation-circle-fill"></i><p class="texti">Solo letras minúsculas y sin acentos</p>
+                </div>
+                <div class="divbutt">
+                    <a href="" class="link"><button class="button">Encriptar</button></a>
+                    <a href="" class="link"><button class="button">Desencriptar</button></a>
+                </div>
             </div>
         </div>
     </main>
@@ -24,7 +30,9 @@
         <img src="./assets/Muñeco.png" alt="Muñeco con lupa observando un diamante">
         <h2 class="subtitle">Ningún mensaje fue encontrado</h2>
         <p>Ingresa el texto que desea encriptar o desencriptar</p>
+        <button  class="button_copy">Copiar</button>
     </aside>
 </div>
+<script src="app.js"></script>
 </body>
 </html> 
