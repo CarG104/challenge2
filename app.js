@@ -19,6 +19,12 @@ document.addEventListener("DOMContentLoaded", function() {
             });
         }
     }
+      // Agrega el evento de copiar al portapapeles
+      document.getElementById("aside").addEventListener("click", function(event) {
+        if (event.target && event.target.classList.contains("buttonCopy")) {
+            copiarAlPortapapeles(event.target.previousElementSibling.textContent);
+        }
+    });
 });
 
 // Función para eliminar todos los elementos dentro del aside
@@ -34,6 +40,9 @@ function guardarElemento(encryptar) {
     var aside = document.querySelector("#aside");
     var nuevoText = document.createElement("p");
     nuevoText.classList.add("encrypt");
+    var buttonCopy = document.createElement("button");
+    buttonCopy.classList.add("buttonCopy");
+    buttonCopy.textContent = "Copiar"; // Añadir texto al botón
 
     if (encryptar) {
         // Encriptar el texto
@@ -43,9 +52,11 @@ function guardarElemento(encryptar) {
         // Desencriptar el texto
         var textoDesencriptado = desencriptarTexto(texto);
         nuevoText.textContent = textoDesencriptado;
+   
     }
-
+    
     aside.appendChild(nuevoText);
+    aside.appendChild(buttonCopy);
 }
 
 function encriptarTexto(texto) {
@@ -59,4 +70,11 @@ function desencriptarTexto(cifrado) {
     const bytes = CryptoJS.AES.decrypt(cifrado, key);
     const textoDesencriptado = bytes.toString(CryptoJS.enc.Utf8);
     return textoDesencriptado;
+}
+function copiarAlPortapapeles(texto) {
+    navigator.clipboard.writeText(texto).then(function() {
+        alert("Texto copiado al portapapeles!");
+    }).catch(function(err) {
+        console.error("Error al copiar el texto: ", err);
+    });
 }

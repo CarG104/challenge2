@@ -149,12 +149,24 @@ i{
     font-weight: 400;
 }
 aside p{
-    font-size: 1rem;
-    line-height: 1.5rem;
+    font-size: 1.5rem;
+    line-height:2rem;
     font-weight: 400;
+    width: 80%; /* Ajusta el ancho del elemento <p> al 80% del contenedor */
+    word-wrap: break-word; /* Asegura que el texto largo se ajuste y no desborde el contenedor */
+    margin: 0 auto; /* Centra el elemento <p> horizontalmente dentro del contenedor aside */
+    overflow-wrap: break-word; /* Permite que el texto largo se divida en múltiples líneas */
 }
 .button_copy{
     background: #D8DFE8;
     padding: 12px;
     border-radius: 16px;
+}
+.buttonCopy{
+    border: 1px solid #0A3871;
+    padding: 24px;
+    border-radius: 24px;
+    color: #0A3871;
+    min-width: 80%;
+    margin-top: 500px;
 }
