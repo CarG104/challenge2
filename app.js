@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function() {
         } else if (botonTexto === "Desencriptar") {
             botones[i].addEventListener("click", function(event) {
                 event.preventDefault(); // Evita que el enlace recargue la página
-
+                var texto = document.querySelector("#textarea").value; // Asegúrate de definir 'texto' aquí
                 if (validarTexto(texto)) {
                     eliminarElementos();
                     guardarElemento(false);// false indica que queremos desencriptar
